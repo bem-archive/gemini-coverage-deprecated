@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+'use strict';
+
+// Do not limit stack trace
+Error.stackTraceLimit = Infinity;
+
+require('../lib/app').run();
