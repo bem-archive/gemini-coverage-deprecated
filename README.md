@@ -14,7 +14,7 @@ npm i git://github.yandex-team.ru/lego/gemini-coverage#v0.0.1
 ### Использование
 
 ```bash
-gemini-coverage <path_to_bem_librari> (стандартный, консольный отчет)
-gemini-coverage <path_to_bem_librari> -r html (отчет в виде html)
-gemini-coverage <path_to_bem_librari> -r number (отчет в виде чисел - 3/5)
+gemini-coverage <path_to_bem_library> # (стандартный, консольный отчет)
+gemini-coverage <path_to_bem_library> -r html # (отчет в виде html)
+gemini-coverage <path_to_bem_library> -r number # (отчет в виде чисел - 3/5)
 ```

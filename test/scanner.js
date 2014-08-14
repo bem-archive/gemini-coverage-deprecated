@@ -19,12 +19,12 @@ describe('Scanner', function() {
                             {
                                 block: 'button',
                                 screens: 1,
-                                path: '/Users/unl0k/projects/cover/test/fixtures/bem-lib/gemini/button.gemini.js'
+                                path: __dirname + '/fixtures/bem-lib/gemini/button.gemini.js'
                             },
                             {
                                 block: 'popup',
                                 screens: 2,
-                                path: '/Users/unl0k/projects/cover/test/fixtures/bem-lib/gemini/popup.gemini.js'
+                                path: __dirname + '/fixtures/bem-lib/gemini/popup.gemini.js'
                             }
                         ],
                         notCovered: [ 'menu' ]
