@@ -1,4 +1,3 @@
-gemini-coverage
-===============
-
 Simple gemini coverage
+=======
+Gemini coverage
