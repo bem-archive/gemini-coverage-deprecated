@@ -1,29 +1,34 @@
-mixin drow-covered(blocks)
+mixin draw-covered(blocks)
   - blocks.forEach(function(block) {
-      li(class="coverage__item")
-        i(class="coverage__icon fa fa-check fa-2")
-        a(class="coverage__link" href= block.path)= block.block.toUpperCase()
-        div(class="state")
-            span(class="state__border" style="width:" + block.screens * 10 + "px")= block.screens
+      div(class="coverage__row")
+        div(class="coverage__block")
+          i(class="coverage__icon fa fa-check fa-2")
+          a(class="coverage__link" href= block.path)= block.block.toUpperCase()
+        div(class="coverage__progress-box")
+          div(class="coverage__progress-bar" style="width:" + block.screens * 10 + "px")= block.screens
   - });
 
-mixin drow-not-covered(blocks)
+
+mixin draw-not-covered(blocks)
   - blocks.forEach(function(block) {
-      li(class="coverage__item")
-        i(class="coverage__icon fa fa-times fa-2")
-        a(class="coverage__link")= block.toUpperCase()
+      div(class="coverage__row")
+        div(class="coverage__block")
+          i(class="coverage__icon fa fa-times fa-2")
+          a(class="coverage__link")= block.toUpperCase()
+        div(class="coverage__progress-box")
+          div(class="coverage__progress-bar coverage__progress-bar-null" style="width:10px")= 0
   - });
 
-mixin drow-table(diff)
-  ul(class="coverage")
-    +drow-covered(diff.covered)
-    +drow-not-covered(diff.notCovered)
+mixin draw-table(diff)
+  +draw-covered(diff.covered)
+  +draw-not-covered(diff.notCovered)
 
 doctype html
 html(lang="en")
   head
     title Gemini coverage
     link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet")
-    style html,body{padding:0;margin:0;}.coverage{display:table;margin:0;padding:0;}.coverage__icon{position:absolute;left:10px;top:6px;font-size:20px;}.coverage__link{color:#B1B1B1;text-decoration:none;font-size:13px;border-bottom:1px dotted #B1B1B1;font-family:Tahoma;margin-left:5px;}.coverage__link:hover{color:#555;}.coverage__item{list-style-type:none;margin-bottom:1px;display:block;position:relative;padding:7px 40px;background:#F7F7F7;}.fa-check{color:#d5d5d5;}.fa-times{color:#d6aeae;}.state__border{text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#9EB683;font-family:monospace;display:block;padding:5px;background:#cdc;}.state{position:absolute;left:100%;top:0;height:100%;box-sizing:border-box;padding:4px;background:#eee;}
-  body
-  +drow-table(data)
+    style= css
+  body(class="main")
+    div(class="coverage")
+      +draw-table(data)

@@ -1,0 +1,80 @@
+
+        .main
+        {
+            background: #eee;
+            padding: 0;
+            margin: 0;
+        }
+
+        .coverage
+        {
+            display: table;
+            position: relative;
+        }
+
+        .coverage__row
+        {
+            display: table-row;
+        }
+        .coverage__block
+        {
+            display: table-cell;
+            position: relative;
+            background: #525D63;
+            padding: 7px 15px;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+        }
+        .coverage__progress-box
+        {
+            display: table-cell;
+            background: #fff;
+            width: 100%;
+            vertical-align: middle;
+            text-align: center;
+            padding: 5px;
+            height: 1px;
+            border-bottom: 1px solid #D5D5D5;
+        }
+        .coverage__progress-bar
+        {
+            background: #97C425;
+            font: 12px/20px Tahoma;
+            color: #5B862C;
+            border: 1px solid #D6D6D6;
+        }
+        .coverage__progress-bar-null
+        {
+            background: #C05D0F;
+            width: 14px;
+            color: #fff;
+        }
+        .coverage__link
+        {
+            color: #fff;
+            font: 13px Tahoma;
+            text-decoration: none;
+            border-bottom: 1px dotted #eee;
+            margin-left: 18px;
+            display: inline-block;
+
+        }
+        .coverage__link:hover
+        {
+            color: #eee;
+        }
+        .coverage__icon
+        {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            margin-top: -8px;
+        }
+        .fa-check
+        {
+            color: #fff;
+        }
+        .fa-times
+        {
+            color: #fff;
+        }
