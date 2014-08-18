@@ -1,6 +1,8 @@
 # Simple gemini coverage
 
 [![Build Status](https://travis-ci.org/bem/gemini-coverage.svg?branch=master)](https://travis-ci.org/bem/gemini-coverage)
+[![Code Climate](https://codeclimate.com/github/bem/gemini-coverage/badges/gpa.svg)](https://codeclimate.com/github/bem/gemini-coverage)
+[![Test Coverage](https://codeclimate.com/github/bem/gemini-coverage/badges/coverage.svg)](https://codeclimate.com/github/bem/gemini-coverage)
 
 ###### Инструмент позволяет получать минимальную информацию о покрытии библиотеки **gemini**-тестами.
 

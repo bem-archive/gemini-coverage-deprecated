@@ -4,4 +4,8 @@ node_js:
 - '0.10'
 script:
 - npm run lint
-- npm test
+- npm test --coverage
+after_success: cat ${TRAVIS_BUILD_DIR}/coverage/lcov.info | codeclimate
+addons:
+  code_climate:
+    repo_token: 5d99190b1ebfcabd6adf13d6740b6d5f27fbe65b0491cf828efff44e62ce9ff2
