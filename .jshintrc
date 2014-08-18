@@ -7,7 +7,7 @@
         "after": false,
         "beforeEach": false,
         "afterEach": false,
-        "it": false,
+        "it": false
     },
 
     "curly": true,
