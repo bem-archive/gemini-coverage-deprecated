@@ -1,7 +1,7 @@
 {
   "author": "Tikvach Alexander <unlok@yandex-team.ru>",
   "name": "gemini-coverage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/bem/gemini-coverage.git"
