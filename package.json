@@ -31,7 +31,7 @@
     "chai-as-promised": "~4.1.1",
     "jshint": "*"
   },
-  "main": "lib/app",
+  "main": "lib/index.js",
   "bin": {
     "gemini-coverage": "bin/gemini-coverage"
   },
