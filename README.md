@@ -18,3 +18,9 @@ gemini-coverage <path_to_bem_library> # (стандартный, консоль�
 gemini-coverage <path_to_bem_library> -r html # (отчет в виде html)
 gemini-coverage <path_to_bem_library> -r number # (отчет в виде чисел - 3/5)
 ```
+
+```js
+var mkReport = require('gemini-coverage');
+...
+return mkReport(path_to_bem_library, reporter);
+```
