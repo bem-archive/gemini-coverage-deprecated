@@ -20,7 +20,10 @@ gemini-coverage <path_to_bem_library> -r number # (отчет в виде чис
 ```
 
 ```js
-var mkReport = require('gemini-coverage');
+var geminiCoverage = require('gemini-coverage');
 ...
-return mkReport(path_to_bem_library, reporter);
+return geminiCoverage.mkReport(path_to_bem_library, reporter)
+    .then(function(coverage) {
+        console.log(geminiCoverage.summarizeCoverage(coverage));
+    });
 ```
