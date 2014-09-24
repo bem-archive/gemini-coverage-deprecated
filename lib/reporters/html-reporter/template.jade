@@ -3,7 +3,7 @@ mixin draw-covered(blocks)
       div(class="coverage__row")
         div(class="coverage__block")
           i(class="coverage__icon fa fa-check fa-2")
-          a(class="coverage__link" href= block.path)= block.block.toUpperCase()
+          a(class="coverage__link" href= block.coverage)= block.block.toUpperCase()
         div(class="coverage__progress-box")
           div(class="coverage__progress-bar" style="width:" + block.screens * 10 + "px")= block.screens
   - });
@@ -20,8 +20,8 @@ mixin draw-not-covered(blocks)
   - });
 
 mixin draw-table(diff)
-  +draw-covered(diff.covered)
   +draw-not-covered(diff.notCovered)
+  +draw-covered(diff.covered)
 
 doctype html
 html(lang="en")
