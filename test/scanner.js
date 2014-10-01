@@ -10,25 +10,7 @@ describe('Scanner', function() {
         it('should reject with error if path is bad', function() {
             return new Scanner('BAD_PATH')
                 .flow()
-                .should.be.rejectedWith(Error, 'Library directory were not found');
-        });
-
-        it('must rejected if gemini folder not found', function() {
-            var mock = mockFS({});
-
-            return new Scanner('/', mock)
-                .flow()
-                .should.be.rejectedWith(Error, 'Gemini directory were not found');
-        });
-
-        it('must rejected if gemini tests not found', function() {
-            var mock = mockFS({
-                'gemini': {}
-            });
-
-            return new Scanner('/', mock)
-                .flow()
-                .should.be.rejectedWith(Error, 'Tests were not found');
+                .should.be.rejectedWith(Error, 'Library directory was not found');
         });
 
         it('must rejected if paths to blocks not found', function() {
@@ -62,6 +44,21 @@ describe('Scanner', function() {
     });
 
     describe('Result', function() {
+
+        it('should return results if no gemini directory', function() {
+            var dirs = {
+                    'button': {},
+                    'popup': {}
+                },
+                mock = mockFS({'common.blocks': dirs});
+
+            return new Scanner('/', mock)
+                .flow()
+                .then(function(result) {
+                    result.covered.should.be.deep.equal([]);
+                    result.notCovered.sort().should.be.deep.equal(Object.keys(dirs).sort());
+                });
+        });
 
         it('must return result if screens equal 0', function() {
             var mock = mockFS({
